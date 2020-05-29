@@ -1,0 +1,622 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> expression
+Rule 1     expression -> RELATION
+Rule 2     expression -> expression COMP expression
+Rule 3     expression -> ID
+Rule 4     expression -> DI
+Rule 5     expression -> PROJ NUMBER LPAREN expression RPAREN
+Rule 6     expression -> INV LPAREN expression RPAREN
+Rule 7     expression -> expression INTERSECT expression
+Rule 8     expression -> expression UNION expression
+Rule 9     expression -> expression DIFFERENCE expression
+Rule 10    expression -> COPROJ NUMBER LPAREN expression RPAREN
+Rule 11    expression -> TRANS LPAREN expression RPAREN
+Rule 12    expression -> LPAREN expression RPAREN
+
+Terminals, with rules where they appear
+
+COMP                 : 2
+COPROJ               : 10
+DI                   : 4
+DIFFERENCE           : 9
+ID                   : 3
+INTERSECT            : 7
+INV                  : 6
+LPAREN               : 5 6 10 11 12
+NUMBER               : 5 10
+PROJ                 : 5
+RELATION             : 1
+RPAREN               : 5 6 10 11 12
+TRANS                : 11
+UNION                : 8
+error                : 
+
+Nonterminals, with rules where they appear
+
+expression           : 2 2 5 6 7 7 8 8 9 9 10 11 12 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . expression
+    (1) expression -> . RELATION
+    (2) expression -> . expression COMP expression
+    (3) expression -> . ID
+    (4) expression -> . DI
+    (5) expression -> . PROJ NUMBER LPAREN expression RPAREN
+    (6) expression -> . INV LPAREN expression RPAREN
+    (7) expression -> . expression INTERSECT expression
+    (8) expression -> . expression UNION expression
+    (9) expression -> . expression DIFFERENCE expression
+    (10) expression -> . COPROJ NUMBER LPAREN expression RPAREN
+    (11) expression -> . TRANS LPAREN expression RPAREN
+    (12) expression -> . LPAREN expression RPAREN
+
+    RELATION        shift and go to state 2
+    ID              shift and go to state 3
+    DI              shift and go to state 4
+    PROJ            shift and go to state 5
+    INV             shift and go to state 7
+    COPROJ          shift and go to state 8
+    TRANS           shift and go to state 9
+    LPAREN          shift and go to state 6
+
+    expression                     shift and go to state 1
+
+state 1
+
+    (0) S' -> expression .
+    (2) expression -> expression . COMP expression
+    (7) expression -> expression . INTERSECT expression
+    (8) expression -> expression . UNION expression
+    (9) expression -> expression . DIFFERENCE expression
+
+    COMP            shift and go to state 10
+    INTERSECT       shift and go to state 11
+    UNION           shift and go to state 12
+    DIFFERENCE      shift and go to state 13
+
+
+state 2
+
+    (1) expression -> RELATION .
+
+    COMP            reduce using rule 1 (expression -> RELATION .)
+    INTERSECT       reduce using rule 1 (expression -> RELATION .)
+    UNION           reduce using rule 1 (expression -> RELATION .)
+    DIFFERENCE      reduce using rule 1 (expression -> RELATION .)
+    $end            reduce using rule 1 (expression -> RELATION .)
+    RPAREN          reduce using rule 1 (expression -> RELATION .)
+
+
+state 3
+
+    (3) expression -> ID .
+
+    COMP            reduce using rule 3 (expression -> ID .)
+    INTERSECT       reduce using rule 3 (expression -> ID .)
+    UNION           reduce using rule 3 (expression -> ID .)
+    DIFFERENCE      reduce using rule 3 (expression -> ID .)
+    $end            reduce using rule 3 (expression -> ID .)
+    RPAREN          reduce using rule 3 (expression -> ID .)
+
+
+state 4
+
+    (4) expression -> DI .
+
+    COMP            reduce using rule 4 (expression -> DI .)
+    INTERSECT       reduce using rule 4 (expression -> DI .)
+    UNION           reduce using rule 4 (expression -> DI .)
+    DIFFERENCE      reduce using rule 4 (expression -> DI .)
+    $end            reduce using rule 4 (expression -> DI .)
+    RPAREN          reduce using rule 4 (expression -> DI .)
+
+
+state 5
+
+    (5) expression -> PROJ . NUMBER LPAREN expression RPAREN
+
+    NUMBER          shift and go to state 14
+
+
+state 6
+
+    (12) expression -> LPAREN . expression RPAREN
+    (1) expression -> . RELATION
+    (2) expression -> . expression COMP expression
+    (3) expression -> . ID
+    (4) expression -> . DI
+    (5) expression -> . PROJ NUMBER LPAREN expression RPAREN
+    (6) expression -> . INV LPAREN expression RPAREN
+    (7) expression -> . expression INTERSECT expression
+    (8) expression -> . expression UNION expression
+    (9) expression -> . expression DIFFERENCE expression
+    (10) expression -> . COPROJ NUMBER LPAREN expression RPAREN
+    (11) expression -> . TRANS LPAREN expression RPAREN
+    (12) expression -> . LPAREN expression RPAREN
+
+    RELATION        shift and go to state 2
+    ID              shift and go to state 3
+    DI              shift and go to state 4
+    PROJ            shift and go to state 5
+    INV             shift and go to state 7
+    COPROJ          shift and go to state 8
+    TRANS           shift and go to state 9
+    LPAREN          shift and go to state 6
+
+    expression                     shift and go to state 15
+
+state 7
+
+    (6) expression -> INV . LPAREN expression RPAREN
+
+    LPAREN          shift and go to state 16
+
+
+state 8
+
+    (10) expression -> COPROJ . NUMBER LPAREN expression RPAREN
+
+    NUMBER          shift and go to state 17
+
+
+state 9
+
+    (11) expression -> TRANS . LPAREN expression RPAREN
+
+    LPAREN          shift and go to state 18
+
+
+state 10
+
+    (2) expression -> expression COMP . expression
+    (1) expression -> . RELATION
+    (2) expression -> . expression COMP expression
+    (3) expression -> . ID
+    (4) expression -> . DI
+    (5) expression -> . PROJ NUMBER LPAREN expression RPAREN
+    (6) expression -> . INV LPAREN expression RPAREN
+    (7) expression -> . expression INTERSECT expression
+    (8) expression -> . expression UNION expression
+    (9) expression -> . expression DIFFERENCE expression
+    (10) expression -> . COPROJ NUMBER LPAREN expression RPAREN
+    (11) expression -> . TRANS LPAREN expression RPAREN
+    (12) expression -> . LPAREN expression RPAREN
+
+    RELATION        shift and go to state 2
+    ID              shift and go to state 3
+    DI              shift and go to state 4
+    PROJ            shift and go to state 5
+    INV             shift and go to state 7
+    COPROJ          shift and go to state 8
+    TRANS           shift and go to state 9
+    LPAREN          shift and go to state 6
+
+    expression                     shift and go to state 19
+
+state 11
+
+    (7) expression -> expression INTERSECT . expression
+    (1) expression -> . RELATION
+    (2) expression -> . expression COMP expression
+    (3) expression -> . ID
+    (4) expression -> . DI
+    (5) expression -> . PROJ NUMBER LPAREN expression RPAREN
+    (6) expression -> . INV LPAREN expression RPAREN
+    (7) expression -> . expression INTERSECT expression
+    (8) expression -> . expression UNION expression
+    (9) expression -> . expression DIFFERENCE expression
+    (10) expression -> . COPROJ NUMBER LPAREN expression RPAREN
+    (11) expression -> . TRANS LPAREN expression RPAREN
+    (12) expression -> . LPAREN expression RPAREN
+
+    RELATION        shift and go to state 2
+    ID              shift and go to state 3
+    DI              shift and go to state 4
+    PROJ            shift and go to state 5
+    INV             shift and go to state 7
+    COPROJ          shift and go to state 8
+    TRANS           shift and go to state 9
+    LPAREN          shift and go to state 6
+
+    expression                     shift and go to state 20
+
+state 12
+
+    (8) expression -> expression UNION . expression
+    (1) expression -> . RELATION
+    (2) expression -> . expression COMP expression
+    (3) expression -> . ID
+    (4) expression -> . DI
+    (5) expression -> . PROJ NUMBER LPAREN expression RPAREN
+    (6) expression -> . INV LPAREN expression RPAREN
+    (7) expression -> . expression INTERSECT expression
+    (8) expression -> . expression UNION expression
+    (9) expression -> . expression DIFFERENCE expression
+    (10) expression -> . COPROJ NUMBER LPAREN expression RPAREN
+    (11) expression -> . TRANS LPAREN expression RPAREN
+    (12) expression -> . LPAREN expression RPAREN
+
+    RELATION        shift and go to state 2
+    ID              shift and go to state 3
+    DI              shift and go to state 4
+    PROJ            shift and go to state 5
+    INV             shift and go to state 7
+    COPROJ          shift and go to state 8
+    TRANS           shift and go to state 9
+    LPAREN          shift and go to state 6
+
+    expression                     shift and go to state 21
+
+state 13
+
+    (9) expression -> expression DIFFERENCE . expression
+    (1) expression -> . RELATION
+    (2) expression -> . expression COMP expression
+    (3) expression -> . ID
+    (4) expression -> . DI
+    (5) expression -> . PROJ NUMBER LPAREN expression RPAREN
+    (6) expression -> . INV LPAREN expression RPAREN
+    (7) expression -> . expression INTERSECT expression
+    (8) expression -> . expression UNION expression
+    (9) expression -> . expression DIFFERENCE expression
+    (10) expression -> . COPROJ NUMBER LPAREN expression RPAREN
+    (11) expression -> . TRANS LPAREN expression RPAREN
+    (12) expression -> . LPAREN expression RPAREN
+
+    RELATION        shift and go to state 2
+    ID              shift and go to state 3
+    DI              shift and go to state 4
+    PROJ            shift and go to state 5
+    INV             shift and go to state 7
+    COPROJ          shift and go to state 8
+    TRANS           shift and go to state 9
+    LPAREN          shift and go to state 6
+
+    expression                     shift and go to state 22
+
+state 14
+
+    (5) expression -> PROJ NUMBER . LPAREN expression RPAREN
+
+    LPAREN          shift and go to state 23
+
+
+state 15
+
+    (12) expression -> LPAREN expression . RPAREN
+    (2) expression -> expression . COMP expression
+    (7) expression -> expression . INTERSECT expression
+    (8) expression -> expression . UNION expression
+    (9) expression -> expression . DIFFERENCE expression
+
+    RPAREN          shift and go to state 24
+    COMP            shift and go to state 10
+    INTERSECT       shift and go to state 11
+    UNION           shift and go to state 12
+    DIFFERENCE      shift and go to state 13
+
+
+state 16
+
+    (6) expression -> INV LPAREN . expression RPAREN
+    (1) expression -> . RELATION
+    (2) expression -> . expression COMP expression
+    (3) expression -> . ID
+    (4) expression -> . DI
+    (5) expression -> . PROJ NUMBER LPAREN expression RPAREN
+    (6) expression -> . INV LPAREN expression RPAREN
+    (7) expression -> . expression INTERSECT expression
+    (8) expression -> . expression UNION expression
+    (9) expression -> . expression DIFFERENCE expression
+    (10) expression -> . COPROJ NUMBER LPAREN expression RPAREN
+    (11) expression -> . TRANS LPAREN expression RPAREN
+    (12) expression -> . LPAREN expression RPAREN
+
+    RELATION        shift and go to state 2
+    ID              shift and go to state 3
+    DI              shift and go to state 4
+    PROJ            shift and go to state 5
+    INV             shift and go to state 7
+    COPROJ          shift and go to state 8
+    TRANS           shift and go to state 9
+    LPAREN          shift and go to state 6
+
+    expression                     shift and go to state 25
+
+state 17
+
+    (10) expression -> COPROJ NUMBER . LPAREN expression RPAREN
+
+    LPAREN          shift and go to state 26
+
+
+state 18
+
+    (11) expression -> TRANS LPAREN . expression RPAREN
+    (1) expression -> . RELATION
+    (2) expression -> . expression COMP expression
+    (3) expression -> . ID
+    (4) expression -> . DI
+    (5) expression -> . PROJ NUMBER LPAREN expression RPAREN
+    (6) expression -> . INV LPAREN expression RPAREN
+    (7) expression -> . expression INTERSECT expression
+    (8) expression -> . expression UNION expression
+    (9) expression -> . expression DIFFERENCE expression
+    (10) expression -> . COPROJ NUMBER LPAREN expression RPAREN
+    (11) expression -> . TRANS LPAREN expression RPAREN
+    (12) expression -> . LPAREN expression RPAREN
+
+    RELATION        shift and go to state 2
+    ID              shift and go to state 3
+    DI              shift and go to state 4
+    PROJ            shift and go to state 5
+    INV             shift and go to state 7
+    COPROJ          shift and go to state 8
+    TRANS           shift and go to state 9
+    LPAREN          shift and go to state 6
+
+    expression                     shift and go to state 27
+
+state 19
+
+    (2) expression -> expression COMP expression .
+    (2) expression -> expression . COMP expression
+    (7) expression -> expression . INTERSECT expression
+    (8) expression -> expression . UNION expression
+    (9) expression -> expression . DIFFERENCE expression
+
+    COMP            reduce using rule 2 (expression -> expression COMP expression .)
+    INTERSECT       reduce using rule 2 (expression -> expression COMP expression .)
+    UNION           reduce using rule 2 (expression -> expression COMP expression .)
+    DIFFERENCE      reduce using rule 2 (expression -> expression COMP expression .)
+    $end            reduce using rule 2 (expression -> expression COMP expression .)
+    RPAREN          reduce using rule 2 (expression -> expression COMP expression .)
+
+  ! COMP            [ shift and go to state 10 ]
+  ! INTERSECT       [ shift and go to state 11 ]
+  ! UNION           [ shift and go to state 12 ]
+  ! DIFFERENCE      [ shift and go to state 13 ]
+
+
+state 20
+
+    (7) expression -> expression INTERSECT expression .
+    (2) expression -> expression . COMP expression
+    (7) expression -> expression . INTERSECT expression
+    (8) expression -> expression . UNION expression
+    (9) expression -> expression . DIFFERENCE expression
+
+    COMP            reduce using rule 7 (expression -> expression INTERSECT expression .)
+    INTERSECT       reduce using rule 7 (expression -> expression INTERSECT expression .)
+    UNION           reduce using rule 7 (expression -> expression INTERSECT expression .)
+    DIFFERENCE      reduce using rule 7 (expression -> expression INTERSECT expression .)
+    $end            reduce using rule 7 (expression -> expression INTERSECT expression .)
+    RPAREN          reduce using rule 7 (expression -> expression INTERSECT expression .)
+
+  ! COMP            [ shift and go to state 10 ]
+  ! INTERSECT       [ shift and go to state 11 ]
+  ! UNION           [ shift and go to state 12 ]
+  ! DIFFERENCE      [ shift and go to state 13 ]
+
+
+state 21
+
+    (8) expression -> expression UNION expression .
+    (2) expression -> expression . COMP expression
+    (7) expression -> expression . INTERSECT expression
+    (8) expression -> expression . UNION expression
+    (9) expression -> expression . DIFFERENCE expression
+
+    COMP            reduce using rule 8 (expression -> expression UNION expression .)
+    INTERSECT       reduce using rule 8 (expression -> expression UNION expression .)
+    UNION           reduce using rule 8 (expression -> expression UNION expression .)
+    DIFFERENCE      reduce using rule 8 (expression -> expression UNION expression .)
+    $end            reduce using rule 8 (expression -> expression UNION expression .)
+    RPAREN          reduce using rule 8 (expression -> expression UNION expression .)
+
+  ! COMP            [ shift and go to state 10 ]
+  ! INTERSECT       [ shift and go to state 11 ]
+  ! UNION           [ shift and go to state 12 ]
+  ! DIFFERENCE      [ shift and go to state 13 ]
+
+
+state 22
+
+    (9) expression -> expression DIFFERENCE expression .
+    (2) expression -> expression . COMP expression
+    (7) expression -> expression . INTERSECT expression
+    (8) expression -> expression . UNION expression
+    (9) expression -> expression . DIFFERENCE expression
+
+    COMP            reduce using rule 9 (expression -> expression DIFFERENCE expression .)
+    INTERSECT       reduce using rule 9 (expression -> expression DIFFERENCE expression .)
+    UNION           reduce using rule 9 (expression -> expression DIFFERENCE expression .)
+    DIFFERENCE      reduce using rule 9 (expression -> expression DIFFERENCE expression .)
+    $end            reduce using rule 9 (expression -> expression DIFFERENCE expression .)
+    RPAREN          reduce using rule 9 (expression -> expression DIFFERENCE expression .)
+
+  ! COMP            [ shift and go to state 10 ]
+  ! INTERSECT       [ shift and go to state 11 ]
+  ! UNION           [ shift and go to state 12 ]
+  ! DIFFERENCE      [ shift and go to state 13 ]
+
+
+state 23
+
+    (5) expression -> PROJ NUMBER LPAREN . expression RPAREN
+    (1) expression -> . RELATION
+    (2) expression -> . expression COMP expression
+    (3) expression -> . ID
+    (4) expression -> . DI
+    (5) expression -> . PROJ NUMBER LPAREN expression RPAREN
+    (6) expression -> . INV LPAREN expression RPAREN
+    (7) expression -> . expression INTERSECT expression
+    (8) expression -> . expression UNION expression
+    (9) expression -> . expression DIFFERENCE expression
+    (10) expression -> . COPROJ NUMBER LPAREN expression RPAREN
+    (11) expression -> . TRANS LPAREN expression RPAREN
+    (12) expression -> . LPAREN expression RPAREN
+
+    RELATION        shift and go to state 2
+    ID              shift and go to state 3
+    DI              shift and go to state 4
+    PROJ            shift and go to state 5
+    INV             shift and go to state 7
+    COPROJ          shift and go to state 8
+    TRANS           shift and go to state 9
+    LPAREN          shift and go to state 6
+
+    expression                     shift and go to state 28
+
+state 24
+
+    (12) expression -> LPAREN expression RPAREN .
+
+    COMP            reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    INTERSECT       reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    UNION           reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    DIFFERENCE      reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    $end            reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 12 (expression -> LPAREN expression RPAREN .)
+
+
+state 25
+
+    (6) expression -> INV LPAREN expression . RPAREN
+    (2) expression -> expression . COMP expression
+    (7) expression -> expression . INTERSECT expression
+    (8) expression -> expression . UNION expression
+    (9) expression -> expression . DIFFERENCE expression
+
+    RPAREN          shift and go to state 29
+    COMP            shift and go to state 10
+    INTERSECT       shift and go to state 11
+    UNION           shift and go to state 12
+    DIFFERENCE      shift and go to state 13
+
+
+state 26
+
+    (10) expression -> COPROJ NUMBER LPAREN . expression RPAREN
+    (1) expression -> . RELATION
+    (2) expression -> . expression COMP expression
+    (3) expression -> . ID
+    (4) expression -> . DI
+    (5) expression -> . PROJ NUMBER LPAREN expression RPAREN
+    (6) expression -> . INV LPAREN expression RPAREN
+    (7) expression -> . expression INTERSECT expression
+    (8) expression -> . expression UNION expression
+    (9) expression -> . expression DIFFERENCE expression
+    (10) expression -> . COPROJ NUMBER LPAREN expression RPAREN
+    (11) expression -> . TRANS LPAREN expression RPAREN
+    (12) expression -> . LPAREN expression RPAREN
+
+    RELATION        shift and go to state 2
+    ID              shift and go to state 3
+    DI              shift and go to state 4
+    PROJ            shift and go to state 5
+    INV             shift and go to state 7
+    COPROJ          shift and go to state 8
+    TRANS           shift and go to state 9
+    LPAREN          shift and go to state 6
+
+    expression                     shift and go to state 30
+
+state 27
+
+    (11) expression -> TRANS LPAREN expression . RPAREN
+    (2) expression -> expression . COMP expression
+    (7) expression -> expression . INTERSECT expression
+    (8) expression -> expression . UNION expression
+    (9) expression -> expression . DIFFERENCE expression
+
+    RPAREN          shift and go to state 31
+    COMP            shift and go to state 10
+    INTERSECT       shift and go to state 11
+    UNION           shift and go to state 12
+    DIFFERENCE      shift and go to state 13
+
+
+state 28
+
+    (5) expression -> PROJ NUMBER LPAREN expression . RPAREN
+    (2) expression -> expression . COMP expression
+    (7) expression -> expression . INTERSECT expression
+    (8) expression -> expression . UNION expression
+    (9) expression -> expression . DIFFERENCE expression
+
+    RPAREN          shift and go to state 32
+    COMP            shift and go to state 10
+    INTERSECT       shift and go to state 11
+    UNION           shift and go to state 12
+    DIFFERENCE      shift and go to state 13
+
+
+state 29
+
+    (6) expression -> INV LPAREN expression RPAREN .
+
+    COMP            reduce using rule 6 (expression -> INV LPAREN expression RPAREN .)
+    INTERSECT       reduce using rule 6 (expression -> INV LPAREN expression RPAREN .)
+    UNION           reduce using rule 6 (expression -> INV LPAREN expression RPAREN .)
+    DIFFERENCE      reduce using rule 6 (expression -> INV LPAREN expression RPAREN .)
+    $end            reduce using rule 6 (expression -> INV LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 6 (expression -> INV LPAREN expression RPAREN .)
+
+
+state 30
+
+    (10) expression -> COPROJ NUMBER LPAREN expression . RPAREN
+    (2) expression -> expression . COMP expression
+    (7) expression -> expression . INTERSECT expression
+    (8) expression -> expression . UNION expression
+    (9) expression -> expression . DIFFERENCE expression
+
+    RPAREN          shift and go to state 33
+    COMP            shift and go to state 10
+    INTERSECT       shift and go to state 11
+    UNION           shift and go to state 12
+    DIFFERENCE      shift and go to state 13
+
+
+state 31
+
+    (11) expression -> TRANS LPAREN expression RPAREN .
+
+    COMP            reduce using rule 11 (expression -> TRANS LPAREN expression RPAREN .)
+    INTERSECT       reduce using rule 11 (expression -> TRANS LPAREN expression RPAREN .)
+    UNION           reduce using rule 11 (expression -> TRANS LPAREN expression RPAREN .)
+    DIFFERENCE      reduce using rule 11 (expression -> TRANS LPAREN expression RPAREN .)
+    $end            reduce using rule 11 (expression -> TRANS LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 11 (expression -> TRANS LPAREN expression RPAREN .)
+
+
+state 32
+
+    (5) expression -> PROJ NUMBER LPAREN expression RPAREN .
+
+    COMP            reduce using rule 5 (expression -> PROJ NUMBER LPAREN expression RPAREN .)
+    INTERSECT       reduce using rule 5 (expression -> PROJ NUMBER LPAREN expression RPAREN .)
+    UNION           reduce using rule 5 (expression -> PROJ NUMBER LPAREN expression RPAREN .)
+    DIFFERENCE      reduce using rule 5 (expression -> PROJ NUMBER LPAREN expression RPAREN .)
+    $end            reduce using rule 5 (expression -> PROJ NUMBER LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 5 (expression -> PROJ NUMBER LPAREN expression RPAREN .)
+
+
+state 33
+
+    (10) expression -> COPROJ NUMBER LPAREN expression RPAREN .
+
+    COMP            reduce using rule 10 (expression -> COPROJ NUMBER LPAREN expression RPAREN .)
+    INTERSECT       reduce using rule 10 (expression -> COPROJ NUMBER LPAREN expression RPAREN .)
+    UNION           reduce using rule 10 (expression -> COPROJ NUMBER LPAREN expression RPAREN .)
+    DIFFERENCE      reduce using rule 10 (expression -> COPROJ NUMBER LPAREN expression RPAREN .)
+    $end            reduce using rule 10 (expression -> COPROJ NUMBER LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 10 (expression -> COPROJ NUMBER LPAREN expression RPAREN .)
+
