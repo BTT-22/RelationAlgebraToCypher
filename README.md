@@ -1,4 +1,4 @@
-# RelationAlgebraToCypher
+# Tarski-Cypher
 Transpiler program from Tarski's relation algebra to the graph database query language Cypher.
 
 # To run the translator:
